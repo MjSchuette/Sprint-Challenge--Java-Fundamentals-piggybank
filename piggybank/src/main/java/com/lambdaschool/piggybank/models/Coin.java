@@ -1,6 +1,7 @@
 package com.lambdaschool.piggybank.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "coins")
@@ -61,6 +62,10 @@ public class Coin {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public double getTotal() {
+        return quantity * value;
     }
 
     @Override
